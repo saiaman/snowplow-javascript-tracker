@@ -2,8 +2,17 @@ node_js:
 - 4.1.2
 language: node_js
 install:
-- npm install
+- npm install -g npm
 - npm install -g grunt-cli
+
+- cd core
+- npm install
+- grunt ts
+- grunt dtsGenerator
+- cd ..
+
+- npm install ./core --save # Must be cleaned from package.json before deploy
+- npm install
 - wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 - unzip ./ngrok-stable-linux-amd64.zip
 before_script:
@@ -11,7 +20,19 @@ before_script:
 - export SUBDOMAIN=$RANDOM$RANDOM
 - ./ngrok http -authtoken $NGROK_AUTH -subdomain $SUBDOMAIN -log=stdout 8500 > /dev/null &
 script:
+- cd core && grunt intern && cd ..
 - grunt travis
+deploy:
+- provider: script
+  script: ./.travis/deploy.py
+  on:
+    condition: '"$(.travis/is_core_release_tag.sh $TRAVIS_TAG)" == "" && $? == 0'
+    tags: true
+- provider: script
+  script: ./.travis/deploy.py
+  on:
+    condition: '"$(.travis/is_tracker_release_tag.sh $TRAVIS_TAG)" == "" && $? == 0'
+    tags: true
 env:
   global:
   # SAUCE_USERNAME

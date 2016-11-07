@@ -20,3 +20,5 @@ env:
   - secure: bkmtL2PXFGdOB6YNfWw6thEyVAbX/l7Q99pfT2jHmfzhTDf4/FT1CprsAacf0JeYkwMg5UQDMqAcZSojjO6GeAY8rhC94Tor5hKoEwCL4wg5NatXBUUI+WWaoBSg2KWYG2MfkPxtGJyNk1LPQoV+nUUzwEGejV8lJvaHVxkBsqA=
   # NGROK_AUTH
   - secure: JwP5MuqZ6k8FlHg8AnzYTrCZByJLnlu0to2srEwfVOhW1efGTEmtWf/SLlplYHcdelsFakdiSbD3BkZyEqpe/2/AIb56KLAqtE2Ng3WS8Vz/80yknxII0xcSPzAZdhZYRUJlbIrA1Ua3XGgirBenjn7ILFXNX/qLgvwJ1uLKCPo=
+  # NPM_AUTH_TOKEN
+  - secure: SSyoXltkQx2rLIXsEnNkk8uHtj3cuJbghFeSxZJ6Kop72MPxnmUFy42gVLlHmIx0uqHGTq6b9Hjy6bVkhWWlQ/bU799qzzzbW5VhCq7ABS6pc3jdqZgdxvbH5MQNycPw6+UunWOkn6B7b5M9mVdPjJczbNWNR0MSrlNyyAl3tic=
